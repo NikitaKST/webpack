@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js', // Главный файл (входная точка)
@@ -28,5 +29,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html', // путь к исходному HTML файлу
+      filename: 'index.html', // имя выходного HTML файла
+    }),
+],
   // Другие настройки Webpack...
 };
